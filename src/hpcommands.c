@@ -48,6 +48,7 @@ int verify_commands(rpn_state *state) {
     /* Math related commands that operate on the stack registers */
     if(strncmp(state->cmd, "pi", 2) == 0) {
         valid_cmd = 1;
+	move_stack_up(state);
         set_reg_value(state, reg_x, hp_pi());
         display_register_x(state);
     }
